@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/BatfishCompany/Sleep-Quality-App#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "postcss-loader": "^7.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
