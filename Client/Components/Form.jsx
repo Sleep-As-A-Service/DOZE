@@ -1,7 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
-const questionArray = ['question 1', 'question 2', 'question 3', 'question 4'];
+// const questionArray = ['question 1', 'question 2', 'question 3', 'question 4'];
 
 
 function Questionnaire() {
@@ -19,21 +19,34 @@ function Questionnaire() {
         {
         text: 'question 3?',
         name: 'q3'
+        },
+        {
+        text: 'question 4?',
+        name: 'q4'
         }
     ];
 
+
     function handleChange(event) {
-        const { name, value } = event.target;
-        setAnswers([...answers, { [name]: value }]);
+        // every time you click a new answer, it updates the state array    
+ 
+            const { name, value } = event.target
+            let newArr = [...answers]; // copying the old datas array
+            newArr[currentQuestion] = { [name] : value }
+            console.log('newArr', newArr)
+            setAnswers(newArr);
+
+        console.log('totalscore', answers)
     }
     function handleSubmit(event) {
         console.log('submitted')
-        // event.preventDefault();
-        // api.submitAnswers(answers);
+
+        // NEED TO ADD LOGIC HERE TO HANDLE SUBMITTING THE FINISHED FORM
     }
     function handleNext() {
         console.log('next')
         setCurrentQuestion(currentQuestion + 1);
+        // console.log('is array?', Array.isArray(answers))
     }
     function handlePrev() {
         console.log('prev')
@@ -44,6 +57,7 @@ function Questionnaire() {
     <Form onSubmit={handleSubmit}>
         <Question
             question={questions[currentQuestion]}
+            index={currentQuestion}
             handleChange={handleChange}
         />
 
@@ -64,16 +78,18 @@ function Questionnaire() {
   );
 }
 
-function Question({ question, handleChange }) {
+function Question({ question, handleChange, index }) {
+
     return (
         <div>
-        <div>{question.text}</div>
-        <input
-            type="radio"
-            name={question.name}
-            onChange={handleChange}
-        />
-        </div>
+            <div>{question.text}</div>
+            <input type="radio" id="never" name={question.name} value="0" index={1} onChange={handleChange} />
+                <label hmtlFor="never">Never</label><br></br>
+            <input type="radio" id="sometimes" name={question.name} value="2" index={index} onChange={handleChange} />
+                <label htmlFor="sometimes">Sometimes</label><br></br>
+            <input type="radio" id="always" name={question.name} value="4" index={index} onChange={handleChange} />
+                <label htmlFor="always">Always</label><br></br>
+        </ div>
     );
 }
 
