@@ -1,6 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import Questionnaire from "../Components/Form.jsx";
+import Questionnaire from "../Components/Questionnaire.jsx";
 // import '../Sass/styles.css';
 
 
