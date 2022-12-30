@@ -26,12 +26,13 @@ function Questionnaire() {
     ];
 
     function handleChange(event) {
+        // OBJECT DECONSTRUCT EVENT.TARGET TO GRAB NAME AND VALUE
         const { name, value } = event.target;
+        // CLONE ANSWERS STATE ARRAY SO NOT DIRECTLY MUTATING STATE
         const newArr = [...answers];
         newArr[currentQuestion] = { [name] : value };
         setAnswers(newArr);
-        // setRadioChecked(true);
-        console.log('totalscore', answers);
+        // console.log('totalscore', answers);
     }
     function handleSubmit(event) {
         console.log('submitted');
@@ -40,15 +41,22 @@ function Questionnaire() {
     }
     function handleNext() {
         console.log('next');
+        // INCREMENT CURRENTQUESTION TO ACCESS NEXT QUESTION BY INDEX IN ARRAY OF QUESTIONS
         setCurrentQuestion(currentQuestion + 1);
+        // RESET FORM WHEN CLICKING NEXT BUTTON SO NOTHING IS ALREADY CHECKED
+        document.getElementById('questionForm').reset();
     }
-    function handlePrev() {
-        console.log('prev');
-        setCurrentQuestion(currentQuestion - 1);
-    }
-    let sum = answers.reduce((acc, curr) => {
+    // function handlePrev() {
+    //     console.log('prev');
+    //     setCurrentQuestion(currentQuestion - 1);
+    // }
+
+    // JUST FOR VISUALS/TESTING
+    const sum = answers.reduce((acc, curr) => {
         return acc + parseInt(Object.values(curr)[0], 10);
       }, 0);
+
+
   return (
     <form id="questionForm" onSubmit={handleSubmit}>
         <div>Sum: {sum}</div>
@@ -57,11 +65,13 @@ function Questionnaire() {
             index={currentQuestion}
             handleChange={handleChange}
         />
+        {/* 
+        COULDN'T FIGURE OUT GOOD WAY TO IMPLEMENT PREVIOUS, WASN'T ABLE TO SAVE ANSWERS AS I WENT
         {currentQuestion > 0 && (
             <button type="button" onClick={handlePrev}>
                 Previous
             </button>
-            )}
+            )} */}
         {currentQuestion < questions.length - 1 && (
             <button type="button" onClick={handleNext}>
             Next
@@ -78,11 +88,11 @@ function Question({ question, handleChange, index }) {
     return (
         <div>
             <div>{question.text}</div>
-            <input type="radio" id="never" name={question.name} value={0} index={index} onChange={handleChange} />
+            <input type="radio" id="never" name={question.name} value={0} index={index} onClick={handleChange} />
                 <label hmtlFor="never">Never</label><br></br>
-            <input type="radio" id="sometimes" name={question.name} value={2} index={index} onChange={handleChange} />
+            <input type="radio" id="sometimes" name={question.name} value={2} index={index} onClick={handleChange} />
                 <label htmlFor="sometimes">Sometimes</label><br></br>
-            <input type="radio" id="always" name={question.name} value={4} index={index} onChange={handleChange} />
+            <input type="radio" id="always" name={question.name} value={4} index={index} onClick={handleChange} />
                 <label htmlFor="always">Always</label><br></br>
         </ div>
     );
