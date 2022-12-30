@@ -8,9 +8,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // import routers
 const usersRouter = require('./routes/users.js');
+const formsRouter = require('./routes/forms.js');
 
 // set routes
 app.use('/users', usersRouter);
+app.use('/forms', formsRouter);
 
 app.get('/', (req, res) => {
   return res.send('This is a test!');

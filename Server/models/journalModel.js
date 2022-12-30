@@ -2,8 +2,8 @@ const mongooseInstance = require('./mongoUtil.js');
 
 const journalSchema = mongooseInstance.Schema(
   {
-    userId: { type: mongoose.Types.ObjectId, ref: 'user' },
-    formId: { type: mongoose.Types.ObjectId, ref: 'form' },
+    userId: { type: mongooseInstance.Types.ObjectId, ref: 'user' },
+    formId: { type: mongooseInstance.Types.ObjectId, ref: 'form' },
     entry: { type: String },
   },
   { timestamps: true }
