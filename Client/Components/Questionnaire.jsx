@@ -40,6 +40,7 @@ function Questionnaire() {
         setAnswers(newArr);
         console.log('totalscore', sum);
     }
+
     function handleSubmit(event) {
         event.preventDefault();
         alert('submitted', answers)
@@ -81,8 +82,7 @@ function Questionnaire() {
             index={currentQuestion}
             handleChange={handleChange}
         />
-        {/* 
-        COULDN'T FIGURE OUT GOOD WAY TO IMPLEMENT PREVIOUS, WASN'T ABLE TO SAVE ANSWERS AS I WENT
+        {/* Attempted to implement previous button, could not get to work.
         {currentQuestion > 0 && (
             <button type="button" onClick={handlePrev}>
                 Previous

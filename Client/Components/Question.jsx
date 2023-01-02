@@ -16,7 +16,14 @@ function Question({ question, handleChange, index }) {
             {
                 options.map(option => (
                     <div key={option.id}>
-                        <input type="radio" id={option.id} name={option.name} value={option.value} onChange={handleChange} index={index} />
+                        <input 
+                        type="radio" 
+                        id={option.id} 
+                        name={option.name} 
+                        value={option.value} 
+                        onClick={handleChange} 
+                        index={index} 
+                        />
                             <label htmlFor={option.id}>{option.id}</label>
                     </div>
                 ))
