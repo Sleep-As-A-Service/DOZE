@@ -8,9 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // cors 
-app.use(cors({
-  origin: '*'
-}));
+app.use(cors());
 
 // import routers
 const usersRouter = require('./routes/users.js');
