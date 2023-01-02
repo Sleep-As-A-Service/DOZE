@@ -5,8 +5,9 @@ import React from 'react';
 const Home = () => {
 
   return (
-    <div>
+    <div className='home-container'>
       <Navigation />
+      <h3>Welcome User!</h3>
       <HomeIsland />
     </div>
   )

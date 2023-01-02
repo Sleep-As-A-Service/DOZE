@@ -1,5 +1,7 @@
 import { BrowserRouter, Navigate, Route, Routes, useRevalidator } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+
+import Navigation from "../Containers/Navigation.jsx";
 import Question from "./Question.jsx";
 
 function Questionnaire() {
@@ -75,28 +77,32 @@ function Questionnaire() {
     // }
 
   return (
-    <form id="questionForm" onSubmit={handleSubmit}>
-        <div>Sum: {sum}</div>
-        <Question
-            question={questions[currentQuestion]}
-            index={currentQuestion}
-            handleChange={handleChange}
-        />
-        {/* Attempted to implement previous button, could not get to work.
-        {currentQuestion > 0 && (
-            <button type="button" onClick={handlePrev}>
-                Previous
-            </button>
-            )} */}
-        {currentQuestion < questions.length - 1 && (
-            <button type="button" onClick={handleNext}>
-            Next
-            </button>
-        )}
-        {currentQuestion === questions.length - 1 && (
-            <button type="submit">Submit</button>
-        )}
-    </form>
+    <div className="question-container">
+        <Navigation />
+        <form id="question-form" onSubmit={handleSubmit}>
+            {/* <div>Sum: {sum}</div> */}
+            <Question
+                question={questions[currentQuestion]}
+                index={currentQuestion}
+                handleChange={handleChange}
+            />
+            {/* Attempted to implement previous button, could not get to work.
+            {currentQuestion > 0 && (
+                <button type="button" onClick={handlePrev}>
+                    Previous
+                </button>
+                )} */}
+            {currentQuestion < questions.length - 1 && (
+                <button className="question-button" type="button" onClick={handleNext}>
+                Next
+                </button>
+            )}
+            {currentQuestion === questions.length - 1 && (
+                <button className="question-button" type="submit">Submit</button>
+            )}
+        </form>
+    </div>
+    
   );
 }
 
