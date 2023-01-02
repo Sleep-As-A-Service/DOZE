@@ -1,4 +1,3 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 function Question({ question, handleChange, index }) {
@@ -12,10 +11,11 @@ function Question({ question, handleChange, index }) {
     ];
 
     return (
-        <div> {question.text}
+        <div className="question-text"> 
+            <h3>{question.text}</h3>
             {
                 options.map(option => (
-                    <div key={option.id}>
+                    <div className="radio-option" key={option.id}>
                         <input 
                         type="radio" 
                         id={option.id} 
