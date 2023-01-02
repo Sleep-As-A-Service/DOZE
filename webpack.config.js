@@ -26,24 +26,12 @@ module.exports = {
       },
       {
         test: /.s[ac]ss$/i,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: [require('tailwindcss'), 
-              // require('autoprefixer')
-            ],
-            },
-          },
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
   devServer: {
+    historyApiFallback: true,
     static: {
       publicPath: '/build',
       directory: path.join(__dirname, 'build'),
