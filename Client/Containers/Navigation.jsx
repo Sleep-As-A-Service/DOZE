@@ -2,6 +2,7 @@ import { AiOutlineHome } from 'react-icons/ai'
 import { BsMoonStarsFill } from 'react-icons/bs';
 import React from 'react';
 // nav bar for all pages
+
 const Navigation = () => {
   return (
     <div className='nav'>
