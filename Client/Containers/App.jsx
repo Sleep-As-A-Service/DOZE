@@ -1,16 +1,22 @@
 import '../Sass/styles.scss';
 
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
-import Navigation from "./Navigation.jsx";
+import Home from './Home';
 import Questionnaire from "../Components/Questionnaire.jsx";
 
 const App = () => {    
     return(
         <div className = "blue">
-            <Navigation />
-            <Questionnaire />
+
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='questions' element={ <Questionnaire /> }/>
+                {/* <Route path='journals' element={} /> */}
+             
+            </Routes>
+            
         </div>
     )
 }
