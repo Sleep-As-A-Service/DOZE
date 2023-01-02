@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className='home-container'>
       <Navigation />
-      <h3>Welcome User!</h3>
+      <h3>Welcome Stefan!</h3>
       <HomeIsland />
     </div>
   )
