@@ -1,17 +1,13 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import Form from "../Components/Form.jsx";
+import Questionnaire from "../Components/Questionnaire.jsx";
 // import '../Sass/styles.css';
 
-const questionArray = [];
 
-const App = () => {
-    // const [question, setQuestion] = useState()
-    
+const App = () => {    
     return(
         <div className = "blue">
-            <h1>LET IT GOOOOOOO</h1>
-            <Form />
+            <Questionnaire />
         </div>
     )
 }
