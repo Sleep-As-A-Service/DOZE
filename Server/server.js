@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 const PORT = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// cors 
+app.use(cors({
+  origin: '*'
+}));
 
 // import routers
 const usersRouter = require('./routes/users.js');
