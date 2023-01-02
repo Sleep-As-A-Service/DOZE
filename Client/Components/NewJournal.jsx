@@ -16,20 +16,26 @@ function NewJournal() {
         const formJSON = Object.fromEntries(formData.entries())
         //console.log(Object.fromEntries(formData.entries()))
         //console.log('submitted')
+        console.log('entry', formJSON.newEntry)
 
-        fetch('http://localhost:8080/journals', {
+        fetch('http://localhost:3000/journals', {
             method: 'POST',
             headers: {
-                'Content-type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
             },
-            body: { 
-                user: 'newuser',
+            mode: 'cors',
+            body: JSON.stringify({ 
+                user: '63b3234df79c9575703ac220',
                 entry: formJSON.newEntry
-            }
+            })
         })
+        .then((response) => response.json())
+        // .then((data) => console.log('data', data));
         document.getElementById('addJournal').reset();
     }
-
+    
+    // need to access the entry and createdAt properties and save them to state
     return (
         <div>
             <div>Add a journal entry</div>
