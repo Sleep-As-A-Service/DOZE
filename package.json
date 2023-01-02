@@ -4,7 +4,6 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js",
     "dev": "concurrently \"node server/server.js\" \" webpack serve --mode development --open --hot\"",
     "build": "webpack --mode production"
@@ -16,6 +15,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "proxy": "http://localhost:3000",
   "bugs": {
     "url": "https://github.com/BatfishCompany/Sleep-Quality-App/issues"
   },
@@ -25,8 +25,7 @@
     "postcss-loader": "^7.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.6.1",
-    "tailwindcss": "^3.2.4"
+    "react-router-dom": "^6.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
