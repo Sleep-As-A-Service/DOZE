@@ -1,7 +1,8 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import NewJournal from "../Components/NewJournal.jsx";
+
 import Entry from "../Components/Entry.jsx";
+import Navigation  from "../Containers/Navigation.jsx";
+import NewJournal from "../Components/NewJournal.jsx";
 
 function JournalContainer() {
     const [entries, setEntries] = useState([]);
@@ -54,9 +55,9 @@ function JournalContainer() {
 
     return (
         <div className="journal-container">
+            <Navigation />
             <NewJournal />
             {/* <Entry id={'63b335c2282b3680d473ef26'} entry={'entry string here'} date={'2023-01-02T19:51:30.092Z'} /> */}
-            {/* {console.log('component', entries)} */}
             {journalEntries}
         </div>
     )

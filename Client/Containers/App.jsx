@@ -16,7 +16,7 @@ const App = () => {
                     element={<Home />} 
                 />
                 <Route path='/questions' element={ <Questionnaire /> } />
-                <Route path='/journals' element={<JournalContainer /> } />
+                <Route path='/journals' element={ <JournalContainer /> } />
                 {/* 
                     This is a route to a stretch feature.
                     <Route path='/sleep-data' element={} /> 
