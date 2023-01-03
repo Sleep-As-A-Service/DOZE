@@ -1,9 +1,9 @@
 body {
     margin: 0;
+    height: 100%;
     background-color: #1a1125;
     color: #F4f5f7;
-    overflow-y: hidden;
-    overflow-y: hidden;
+    // overflow: hidden;
 }
 
 .nav {
@@ -67,7 +67,6 @@ body {
 
 .question-container {
     justify-content: center;
-    font-size: 1.1em;
     
     #question-form {
         background-color: #3f334d;
@@ -122,7 +121,7 @@ body {
 }
 
 .journal-container {
-    background-color: #3f334d;
+    // background-color: #3f334d;
     text-align: center;
 
     .new-journal-container {
@@ -132,19 +131,35 @@ body {
         }
 
         #add-journal {
+            background-color: #3f334d;
+            padding: 1em;
+            margin: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 0.5em;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
             textarea {
+                background-color: #1a1125;
+                color: #d9dce5;
                 margin: 0;
+                padding: .75em;
                 resize: none;
-                height: 100px;
+                height: 120px;
                 font-size: 1.1em;
                 min-width: 300px;
-                border: 1;
+                border: 1px;
+                border-radius: 0.2em;
+                box-shadow: rgba(116, 73, 144, 0.25) 0px 30px 60px -12px inset, rgba(94, 57, 108, 0.3) 0px 18px 36px -18px inset;
             }
 
             .submit-button {
-                background-color: #5b04bc;
+                background-color: #1a1125;
                 color: #d9dce5;
-                margin: 1em;
+                margin-top: 1.2em;
+                font-weight: 900;
+                letter-spacing: 0.05em;
                 height: 3em;
                 width: 7em;
                 border: none;
@@ -159,7 +174,59 @@ body {
         }
     }
 
+    .scroll-entries-container {
+        margin: 1em;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
     .journal-entry {
-        background-color: #3f334d;
+        background-color: #d9dce5;
+        color: #1a1125;
+        margin: 1em;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        display: flex;
+        flex-direction: column;
+
+        .journal-text {
+            font-size: 1.25em;
+            margin: 0.5em;
+        }
+
+        .journal-date {
+            font-size: 0.75em;
+            align-self: end;
+            margin: 0.5em;
+        }
+
+        .button-container {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            background-color: #3f334d;
+            color: #F4f5f7;
+            height: 2.5em;
+            width: 6em;
+            margin: 1em;
+
+            font-size: 0.65em;
+
+            border-radius: 1em;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5b04bc;
+            color: #03dac6;
+        }
+
+        .delete-button:hover {
+            background-color: red;
+            color: #F4f5f7;
+        }
     }
 }
