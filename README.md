@@ -2,11 +2,11 @@
 
                                    # --- Getting Started --- 
 To get started with the application: 
-    [ ] Clone the repository to a directory on your computer.
-    [ ] Run `npm install` inside the root directory to install the packages for the frontend.
-    [ ] Then `cd Server` and run `npm install` to get the reuqired packages for the backend.
-    [ ] Run `cd ..` to the root directory and run `npm start`, then `npm run build`.
-    [ ] If you would like to run it in development mode, run `npm run dev`.
+ - [ ] Clone the repository to a directory on your computer.
+ - [ ] Run `npm install` inside the root directory to install the packages for the frontend.
+ - [ ] Then `cd Server` and run `npm install` to get the reuqired packages for the backend.
+ - [ ] Run `cd ..` to the root directory and run `npm start`, then `npm run build`.
+ - [ ] If you would like to run it in development mode, run `npm run dev`.
 
 
                                    ♦♦♦ Sleep-Quality App ♦♦♦
