@@ -17,14 +17,16 @@ function JournalContainer() {
         })
     }, [entries, setEntries])
 
-    function handleDelete() {
-        fetch('/http://localhost:3000/journals', {
+    function handleDelete(e, key) {
+        // console.log('e.target', e.target.key)
+        
+        fetch(`/http://localhost:3000/journals/${key}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: {
-
+                
             }
         })
     }
@@ -41,7 +43,7 @@ function JournalContainer() {
         })
     }
 
-    const journalEntries = entries.map((entry) => {
+    const journalEntries = entries.reverse().map((entry) => {
         return (
             <Entry 
                 key={entry.id}
@@ -58,7 +60,10 @@ function JournalContainer() {
             <Navigation />
             <NewJournal />
             {/* <Entry id={'63b335c2282b3680d473ef26'} entry={'entry string here'} date={'2023-01-02T19:51:30.092Z'} /> */}
-            {journalEntries}
+            <div className="scroll-entries-container">
+                {journalEntries}
+            </div>
+            
         </div>
     )
 }
