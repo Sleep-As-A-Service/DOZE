@@ -1,2 +1,15 @@
 node_modules
 /Server/node_modules
+
+# dotenv environment variables file
+.env
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+.sass-cache

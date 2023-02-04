@@ -4,7 +4,9 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js",
+    "dev": "concurrently \"node server/server.js\" \" webpack serve --mode development --open --hot\"",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -13,11 +15,15 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "proxy": "http://localhost:3000",
   "bugs": {
     "url": "https://github.com/BatfishCompany/Sleep-Quality-App/issues"
   },
   "homepage": "https://github.com/BatfishCompany/Sleep-Quality-App#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "postcss-loader": "^7.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.1"
@@ -30,6 +36,8 @@
     "concurrently": "^7.6.0",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^2.0.20",
+    "react-icons": "^4.7.1",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
